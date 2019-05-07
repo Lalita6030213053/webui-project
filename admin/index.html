@@ -29,7 +29,7 @@
 <body class="bg-gradient-primary">
 
   <div class="container">
-    <form action="dashboard.html" id="mainform" method="POST" class="was-validated" novalidate>
+    <form action="dashboard.html" id="mainform" method="get" class="was-validated" novalidate>
       <!-- Outer Row -->
       <div class="row justify-content-center">
 
@@ -49,13 +49,13 @@
                     </div>
                     <form class="user">
                       <div class="form-group">
-                        <input type="email" required class="form-control form-control-user" id="exampleInputEmail"
-                          aria-describedby="emailHelp" placeholder="Enter Email Address..." >
+                        <input type="email" required class="form-control form-control-user" id="username"
+                          aria-describedby="emailHelp" onclick="Login()" placeholder="Enter Email Address..." >
                         
                       </div>
                       <div class="form-group">
                         <input type="password" required class="form-control"
-                          id="exampleInputPassword" placeholder="Password" >
+                          id="password" placeholder="Password" >
                         
                       </div>
                       <hr>
@@ -89,21 +89,9 @@
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
-
-
-  <script>
-  $(function () {
-      $('#mainform').submit(function (event) {
-          var form = $('#mainform')[0];
-          if (form.checkValidity() === false) {
-              event.preventDefault();
-          }
-          $(this).addClass('was-validated');
-      });
-  });
-
-  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
 
 </body>
 
