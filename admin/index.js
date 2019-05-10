@@ -70,3 +70,21 @@ $(function () {
 
     });
 });
+
+$(function () {
+    $.get("customers.json", function (data) {
+        var customers = data;
+        var Htable = '<tr><th>ID</th><th>Company Name</th><th>Contact Name</th><th>Contact Title</th></tr>';
+
+        $('#cusTable').append(Htable);
+        for(var index in customers){
+            var customer = customers[index];
+            var Rtable = '<tr><td>' + customer.customerID + '</td><td>' + customer.companyName +
+                         '</td><td><a href = "custdetail.html"></a>' + customer.contactName +
+                         '</td><td>' + customer.contactTitle + '</td></tr>'; 
+            
+            $("#cusTable").append(Rtable);
+        }
+        });
+    });
+    
